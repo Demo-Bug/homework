@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>return</title>
+</head>
+<body>
+	<script>
+	var ar3 = [23,4,2,56,1424,64,7]		
+	function aa(arr,value){
+		if(!(typeof arr == 'object' && arguments.length > 1)){
+			return 'mmp';
+		}
+		for(i = 0; i < arr.length; i++){
+			if(arr[i] == value){
+				return true;
+			}	
+		}
+		return false;
+	}
+	alert (aa(ar3,4));
+	// alert(b);
+</script>
+
+<!-- 方法1 -->
+	<script>
+	var ar3 = [23,4,2,56,1424,64,7]
+	function ab(arr,str = '*'){
+		var result = '';
+		for(i = 0; i < arr.length; i++){
+			if(i < arr.length-1){
+			result += arr[i] + str;
+		    }else{
+			result += arr[i];
+		    }
+	    }
+		return result;
+	}
+	document.write(ab(ar3));
+	</script>
+<!-- 方法2 -->
+	<script>
+	var ar3 = [23,4,2,56,1424,64,7]
+	function ab(arr,str){
+		var result = '';
+		for(i = 0; i < arr.length; i++){
+			if(i < arr.length-1){
+			result += arr[i] + str;
+		    }else{
+			result += arr[i];
+		    }
+	    }
+		return result;
+	}
+	document.write(ab(ar3,'*'));
+	</script>
+<!-- 方法3 -->
+	<script>
+	var ar3 = [23,4,2,56,1424,64,7]
+	function ab(arr,str){
+		var result = '';
+		/*if(str == undefined){
+			str = '='
+		}*/
+		str = str == undefined ? '(' : str
+		for(i = 0; i < arr.length; i++){
+			if(i < arr.length-1){
+			result += arr[i] + str;
+		    }else{
+			result += arr[i];
+		    }
+	    }
+		return result;
+	}
+	document.write(ab(ar3));
+	</script>
+<!-- 方法4 -->
+	<script>
+	var ar3 = [23,4,2,56,1424,64,7]
+	function ab(arr,str){
+		str =  str || '!'
+		var result = '';
+		for(i = 0; i < arr.length; i++){
+			if(i < arr.length-1){
+			result += arr[i] + str;
+		    }else{
+			result += arr[i];
+		    }
+	    }
+		return result;
+	}
+	document.write(ab(ar3));
+	</script>
+
+
+	<script>
+		var ar3 = [23,4,2,56,1424,64,7]
+		function zc(arr){
+		var newarr = []
+		for(i = 0; i < arr.length; i++){
+			if(arr[i]%2==0){
+				newarr[newarr.length] = arr[i];
+			}
+		}
+		return newarr;
+		}
+		document.write(zc(ar3));
+	</script>
+
+
+
+
+	
+</body>
+</html>

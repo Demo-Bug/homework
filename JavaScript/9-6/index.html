@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<!-- 	<script>
+		var table = '<table>'
+		for(i = 1; i < 11; i++){
+			table += '<tr>'
+			for(j = 1; j < 11; j++){
+				table += '<td>' + i + '+' + j + '</td>'
+			}
+		}
+		document.write(table)
+	</script> -->
+
+
+<!-- 问题1 -->
+<!-- 	<script>
+    var row = 6;
+	for(var i = 1; i <= row; i++){ 
+		for(var k = 1; k <= row-i; k++){
+			document.write('&nbsp')
+		}
+        for(var j=1; j <= 2*i-1; j++){
+            document.write('*')
+        } 
+        document.write("<br/>")
+    }
+</script>
+
+<script>
+    var row = 6;
+	for(var i = 1; i <= row; i++){ 
+		for(var k = 1; k <= row-i; k++){
+			document.write('_')
+		}
+        for(var j=1; j <= 2*i-1; j++){
+            document.write('*')
+        } 
+        document.write("<br/>")
+    }
+</script> -->
+
+
+<!--     <script>
+    var a = prompt('输',1)
+	var i = 1, j = 1;
+	document.write(i + '&nbsp');
+	document.write(j + '&nbsp');
+	for(var k = 0; k <= a;){
+		k = i + j;
+		if(k <= 100){
+	    document.write(k + '&nbsp');
+	    }
+	    i = j;
+	    j = k;
+    }
+</script> -->
+
+
+    <script>
+    	var arr = [1,2,378,456,53];
+    	document.write(arr [3]);              //输出的是第四个
+    	document.write('<br/>');
+    	document.write(arr);                  //输出的是数组的内容
+    	document.write('<br/>'); 
+    	document.write(arr.length);           //输出的是数组的长度
+    	document.write('<br/>');
+    	document.write(arr[arr.length-2]);    //输出的倒数第二个
+    	document.write('<br/>');
+    	document.write(arr.length-1);         //输出的倒数第二个的第一位
+    	document.write('<br/>');
+    	document.write(arr.length-2);         //输出的倒数第三个的第一位
+    	document.write('<br/>');
+    	document.write(arr[arr.length-1]);    //输出的倒数第一个
+    </script>
+
+
+    <script>
+    	var arr = ['a','b',3,4,'d',6,7,8,9];
+    	for(var i = 0; i < arr.length; i++){
+    		document.write(arr[i]);
+    	}
+    	document.write('<br/>');
+    </script>
+
+    <script>
+    	var arr = ['a','b',3,4,'d',6,7,8,9];
+    	for(var i = arr.length-1; i >= 0; i--){
+    		document.write(arr[i]);
+    	}
+    	document.write('<br/>');
+    </script>
+
+
+    <script>
+        var max = [0];
+    	var arr = [111,12,3,4,22,6,7,8,9];
+    	for(var i = 0; i < arr.length; i++){
+    		if(max < arr[i]){
+    			max = arr[i]
+    		}
+    	}
+    	document.write(max);
+    	document.write('<br/>')
+    </script>
+
+
+    <!-- 排序 -->
+    <script>
+    	 var arr = [1,214,43,54,26,23,156,25,3];
+    	 for(var i = 0; i < arr.length; i++){
+    	 	for(var j = i+1; j < arr.length; j++){
+    	 		if(arr[i] > arr[j]){
+    	 			var temp = arr[i];
+    	 			arr[i] = arr[j];
+    	 			arr[j] = temp;
+    	 		}
+    	 	}
+    	 }
+    	document.write(arr);
+    	document.write('<br/>')
+    </script>
+    
+
+    <!-- for -->
+    <script>
+    	for(i = 1; i < 11; i++){
+    		document.write(i);
+    	}
+    	    document.write('<br/>')
+    </script>
+
+
+    <!-- while 先判断，再运算-->
+    <script>
+    	var i = 1;
+    	while(i < 11){                             //（里面是条件）
+    		document.write(i + '&nbsp');
+    		i++;
+    	}
+        document.write('<br/>');
+    </script>
+
+
+    <script>
+    	var sum = 0, i = 1;
+    	while(i < 11){
+    		sum += i;
+    		document.write(sum);
+    		document.write('&nbsp');
+    		i++;
+    	}
+    	document.write('<br/>')
+    </script>
+
+
+    <!-- do while 先运算，再判断-->
+
+    <script>
+        var sum = 0; i = 11;
+    	do{
+    		sum = sum + i;
+    		i++;
+    	}while(i < 11){
+    		document.write(sum);
+    	}
+    	document.write('<br/>')
+    </script>
+
+
+    <!-- 循环跳转 -->
+
+    <script>
+    	for(var i = 1; i < 11; i++){
+    		if(i%2==0){
+    			document.write(i + '&nbsp')
+    		}
+    	}
+    	document.write('<br/>')
+    </script>
+
+
+    <script>
+    	for(var i = 2; i < 11; i++){
+    		if(i%2==0){
+    			continue;
+    			//break;
+    		}
+    		document.write(i + '&nbsp')
+    	}
+    	document.write('<br/>')
+    </script>
+
+
+    <script>
+    	var zhaolu = [90,99,98,95,90];
+    	var lizelu = [30,89,68,05,94];
+    	var chenbaolu = [943,199,934,95,960];
+    	var classes = [zhaolu,lizelu,chenbaolu];
+    	document.write(classes[2][2]);
+    	document.write('<br/>')
+    </script>
+
+
+    <script>
+    	var zhaolu = [90,99,98,95,90];
+    	var lizelu = [30,89,68,05,94];
+    	var chenbaolu = [943,199,934,95,960];
+    	var classes = [zhaolu,lizelu,chenbaolu];
+    	for(var i = 0; i < classes.length; i++){
+    		for(var j = 0; j < classes[i].length; j++){
+    			document.write(classes[i][j] + ' ')
+    		}
+    	}
+    	document.write('<br/>')
+    </script>
+
+    <script>
+	var max = classes[0][0];
+	var classes = [[90,99,98,95,90],[30,89,68,05,94],[943,199,934,95,960]];
+	for(var i = 0; i < classes.length; i++){
+		for(var j = 0; j < classes[i].length; j++){
+			if(max < classes[i][j]){
+				max = classes[i][j]
+			}
+		}
+	}  
+	document.write(max);
+	document.write('<br/>') 	
+</script>
+
+    <script>
+    	var arr = [1,2,,3,4,,5,,6,7];
+    	var newarr = [];
+    	for(var i = 0; i < arr.length; i++){
+    		if(arr[i] != undefined){
+    			//continue;
+    		
+    		    newarr[newarr.length] = arr[i];
+    	}}
+    	document.write(newarr);
+	    document.write('<br/>')
+    </script>
+
+<!-- 又一种方法 -->
+
+    <script>
+    	var arr = [1,2,,3,4,,5,,6,7];
+    	var newarr = [];
+    	for(var i = 0; i < arr.length; i++){
+    		if(arr[i] == undefined){
+    			continue;
+    		}
+    		    newarr[newarr.length] = arr[i];
+    	}
+    	document.write(newarr);
+	    document.write('<br/>')
+    </script>
+<!-- 又一种方法 -->
+    <script>
+    	var arr = [1,2,,3,4,,5,,6,7];
+    	var newarr = [];
+    	for(var i = 0; i < arr.length; i++){
+    		if((typeof arr[i]) != 'undefined'){
+    		
+    		    newarr[newarr.length] = arr[i];
+    	    }
+        }
+    	document.write(newarr);
+	    document.write('<br/>');
+    </script>
+
+    <!-- 功能、代码段、复用、函数 -->
+    <script>
+        sum();
+    	function sum(){
+    		var sum = 0, i = 1;
+    	    while(i < 11){
+    		    sum += i;
+    		    document.write(sum);
+    		    document.write('&nbsp');
+    		    i++;
+    	    }
+    	document.write('<br/>')
+    	}
+    </script>
+<!-- 定义一个自变量   var a = 10;中a是自变量，10是字面量-->
+    <script>
+        sum();
+    	var sum = function(){
+    		var sum = 0, i = 1;
+    	    while(i < 11){
+    		    sum += i;
+    		    document.write(sum);
+    		    document.write('&nbsp');
+    		    i++;
+    	    }
+    	document.write('<br/>')
+    	}
+    </script>
+ <!-- 函数打包1 -->
+<!-- 任意行、任意列-->
+    <script>
+    function table(hang,lie){
+        var table = '<table border=0 cellspacing=1>'
+            for(i = 1; i <= hang; i++){
+            	table += '<tr>';
+            	for(j = 1; j <= lie; j++){
+            		table += '<td>1</td>'
+            	}
+            }
+        document.write(table);
+    }
+    table(2,2);
+    document.write('<br/>')
+    </script>
+
+
+ <!-- 函数打包2 -->
+<!-- 任意数组最大值-->
+    <script>
+    function MaxA(arr1){
+        var max = arr1[0][0];
+	    for(var i = 0; i < arr1.length; i++){
+		    for(var j = 0; j < arr1[i].length; j++){
+			    if(max < arr1[i][j]){
+				    max = arr1[i][j]
+			}
+		}
+	}  
+	document.write(max);
+    }
+    var arr = [[11,111,1,1111],[112,234,25,6117],[86,7,56,3],[33,452,24,1],[3455,78,6,71]];
+    MaxA(arr);
+    document.write('<br/>')
+
+    </script>
+
+	<!-- 函数打包 金字塔 -->
+<script>
+    function jzt(row1){
+    var row = row1;
+	for(var i = 1; i <= row; i++){ 
+		for(var k = 1; k <= row-i; k++){
+			document.write('_')
+		}
+        for(var j=1; j <= 2*i-1; j++){
+            document.write('*')
+        } 
+        document.write("<br/>")
+    }
+    }
+    jzt(3);
+</script>
+ 
+
+    <!-- 函数打包 和 -->
+    <script>
+        sum(10);
+    	function sum(a){
+    		var sum = 0, i = 1;
+    	    while(i < a){
+    		    sum += i;
+    		    document.write(sum);
+    		    document.write('&nbsp');
+    		    i++;
+    	    }
+    	document.write('<br/>')
+    	}
+    </script>
+
+
+    <!-- 函数打包 1 1 2 3 5 8 -->
+    <script>
+    function dc(aa){
+	var i = 1, j = 1;
+	document.write(i + '&nbsp');
+	document.write(j + '&nbsp');
+	for(var k = 0; k <= aa;){
+		k = i + j;
+		if(k <= aa){
+	    document.write(k + '&nbsp');
+	    }
+	    i = j;
+	    j = k;
+    }
+    }
+    dc(11);
+</script>
+</body>
+</html>
