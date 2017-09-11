@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>let</title>
+</head>
+<body>
+	<script>
+		var num = 10
+		let numm = 20
+		console.log(num)
+		console.log(numm)
+	</script>
+
+
+	<!-- 块级作用域 -->
+	<script>
+		{
+			let num = 9
+			console.log(num)
+		}
+		console.log(num)   //这个是报错，输出不了，因为let定义的num只作用于{里面}
+
+		{
+			var num = 9
+			console.log(num)
+		}
+		console.log(num)   //这个是可以输出的
+	</script>
+
+
+	<script>
+		const π = 3.1415926
+		π = 3.333         //会报错，const声明的变量，是不可以修改的，而且它需要在声明的同时进行赋值
+		alert(π)
+	</script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>闭包</title>
+</head>
+<body>
+	<script>
+		function fn(){
+			var num = 10
+			return fn1
+			function fn1(){
+				num++
+				return num
+			}
+		}
+		var result = fn()    // fn1这个函数
+		alert(result())      // 11，fn1这个函数的值
+	</script>
+</body>
+</html>

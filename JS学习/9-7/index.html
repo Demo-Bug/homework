@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+    
+    <!-- 任意数组中插入任意个 -->
+	<script>
+		var arr1 = [1,2,3,4,56]
+		push(arr1,'a','b',9,'d')
+		function push(arr){
+			for(var i = 1; i < arguments.length; i++){
+			arr[arr.length] = arguments[i]
+		    }
+		    document.write(arr1);
+	    }
+	    document.write('<br/>')
+	</script>
+
+    
+    <!-- 任意数组进行排序(降序) -->
+<!--     <script>
+	var ar1 = [23,4,2,56,1424,64,7]
+	paixuUp(ar1);
+	function paixuUp(arr){
+		for(i = 0; i < arr.length; i++){
+			for(j = i + 1; j < arr.length; j++){
+				if(arr[i] < arr[j]){
+					var k = arr[i]
+					arr[i] = arr[j]
+					arr[j] = k
+				}
+			}
+		}
+		document.write(ar1)
+	}
+</script> -->
+
+
+    <!-- 任意数组进行排序(升序) -->
+<!--     <script>
+	var ar1 = [23,4,2,56,1424,64,7]
+	paixuDown(ar1);
+	function paixuDown(arr){
+		for(i = 0; i < arr.length; i++){
+			for(j = i + 1; j < arr.length; j++){
+				if(arr[i] > arr[j]){
+					var k = arr[i]
+					arr[i] = arr[j]
+					arr[j] = k
+				}
+			}
+		}
+		document.write(ar1)
+	}
+	document.write('<br/>')
+</script> -->
+
+
+    <!-- 升降序组合 -->
+    <script>
+    var ar3 = [23,4,2,56,1424,64,7]
+    paixu(ar3,'>');
+    function paixu(ar2,type){
+   	if(type == '<'){
+   		paixuUp(ar3)
+   	}else if(type == '>'){
+   		paixuDown(ar3)
+   	}
+   	document.write(ar3)
+   }
+
+   	paixuUp(ar3);
+   	function paixuUp(arr){
+   		for(i = 0; i < arr.length; i++){
+   			for(j = i + 1; j < arr.length; j++){
+   				if(arr[i] < arr[j]){
+   					var k = arr[i]
+   					arr[i] = arr[j]
+   					arr[j] = k
+   				}
+   			}
+   		}
+   		
+   	}   
+       
+   	paixuDown(ar3);
+   	function paixuDown(arr){
+   		for(i = 0; i < arr.length; i++){
+   			for(j = i + 1; j < arr.length; j++){
+   				if(arr[i] > arr[j]){
+   					var k = arr[i]
+   					arr[i] = arr[j]
+   					arr[j] = k
+   				}
+   			}
+   		}
+   	
+   	}	
+   </script>
+</body>
+</html>

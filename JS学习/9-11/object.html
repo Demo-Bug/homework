@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>object</title>
+</head>
+<body>
+	<script>
+		function Person(){
+
+		}
+		let ren1 = new Person()
+		ren1.age = 25
+		ren1.name = '张三'
+		ren1.skill = 'js'
+		let ren2 = new Person()
+		ren1.say = function(){
+			alert(ren1.skill)
+		}
+		ren1.say()
+		ren2.age = 23
+		ren2.name = '李四'
+		document.write(ren1.name)
+	</script>
+</body>
+</html>

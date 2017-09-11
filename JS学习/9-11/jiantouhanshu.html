@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>箭头函数</title>
+</head>
+<body>
+	<script>//这个函数与下面的是等价的——两个是一个意思
+		var fn = function(a){
+			return a
+		}  
+		alert(fn(2))
+	</script>
+	<!-- || -->
+	<script>
+        var fn = a => a	
+		alert(fn(2))	
+	</script>
+
+
+	<script>//这个函数与下面的是等价的——两个是一个意思
+		var fn = function(){
+			return 3
+		}  
+		alert(fn())
+	</script>
+	<!-- || -->
+	<script>
+        var fn = () => 3	
+		alert(fn())	
+	</script>
+
+
+	<script>//这个函数与下面的是等价的——两个是一个意思
+	var fn = function(a,b){
+		return a+b
+	}  
+	alert(fn(2,3))
+    </script>
+	<!-- || -->
+	<script>
+        var fn = (a,b) => a+b	
+		alert(fn(2,3))	
+	</script>
+
+
+
+	<!-- || -->
+	<script>
+        var fn = (a,b) => {
+            alert(a+b)
+            alert(a-b)
+            return [a,b]
+        }	
+		alert(fn(3,2))	
+	</script>
+</body>
+</html>

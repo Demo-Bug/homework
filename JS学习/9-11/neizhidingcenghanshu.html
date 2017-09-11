@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>内置（JS自带） 顶层（全局的） 函数</title>
+</head>
+<body>
+	<script>
+		// escape()   unescape()   Number()   String()   Boolean()   parseInt()   parseFloat()   isNaN()
+		var str = '赵路'
+		console.log(escape(str))
+		console.log(unescape('%u8D75%u8DEF'))
+		document.write(unescape('%u8D75%u8DEF'))
+		document.write(escape(str))
+
+		console.log(Number(123))          // 123
+		console.log(Number(0b11111))      // 31
+		console.log(Number(true))         //  1
+		console.log(Number(false))        // 0
+		console.log(Number(null))         // 0
+		console.log(Number(undefined))    // NaN
+		console.log(Number('123'))        // 数字的123
+		console.log(Number('00123'))      // 数字的123（0不显示）
+		console.log(Number('0o123'))      // 数字的83（0o代表八进制，同样的0x代表十六进制）
+		console.log(Number(123.00))       // 数字的123（0不显示）
+		console.log(Number('123.00'))     // 数字的123（0小数点无意义不显示）
+		console.log(Number('123.05'))     // 数字的123.05（小数点有意义显示）
+		console.log(Number('123.05.2'))   // NaN
+		//console.log(Number(123.05.2))     // 报错
+		console.log(Number('123px'))      // NaN
+		console.log(Number('abcde'))      // NaN
+		console.log(Number('true'))       // NaN
+		console.log(Number(''))           //  0
+
+		console.log(String(true))         // 'true'
+		console.log(String(1))            // '1'
+
+		console.log(Boolean(''))          // 六个都是假的 0  null  false  NaN  空字符串 undefined 别的全是真的
+
+
+		//parseInt()   字符串转换为整数   数字 + - 空格开头  第一个数字字符开始，第一个数字字符结束
+		console.log(parseInt('1234'))            //  1234
+		console.log(parseInt('0b1111'))          //  0
+		console.log(parseInt('100px'))           //  100
+		console.log(parseInt('100px200'))        //  100
+		console.log(parseInt('     100px200'))   //  100
+		console.log(parseInt('     -100px200'))  //  -100
+		console.log(parseInt('-1.00px200'))      //  -1
+		console.log(parseInt('-1.05px200'))      //  -1
+		console.log(parseInt('-1.55px200'))      //  -1
+		console.log(parseInt('ab45px200'))       //  NaN
+        
+
+        //parseFloat()   字符串转换为小数   数字 + - 空格开头  第一个数字字符开始，最后一个数字字符结束
+		console.log(parseFloat('100.5px'))       // 100.5
+		console.log(parseInt('ab45px200'))       //  NaN
+		console.log(parseFloat('1005px'))       // 1005
+
+        // isNaN is not a number   
+		console.log(isNaN('x'))           // true
+		console.log(isNaN('12'))          // false
+	</script>
+</body>
+</html>
