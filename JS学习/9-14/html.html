@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	    #box{
+	    	width: 100px;
+	    	height: 200px;
+	    	background: red;
+	    }
+	</style>
+</head>
+<body>
+    <div id="box">
+    	
+    </div>
+	<script>
+		let box = document.getElementById('box');
+		box.onmouseover = function(){
+			box.style.background = color();
+		}
+        function color(){
+    	    let str = 'rgb('; 
+		    for(let i = 0; i < 3; i++){
+			    let value = Math.round(Math.random()*255);
+			    str += value + ',';
+		    }
+		    str = str.slice(0,-1);
+		    str += ')';
+		    return str;
+	    }
+	</script>
+
+	<script>
+		let str = 'asffg';
+		let str1 = 'qawea';
+		let stre = str + str1;
+		console.log(stre);
+	</script>
+
+	<script>
+		var a=[0,1,2,3,4,5];
+		a.splice(1,0,22);
+		document.write(a);
+	</script>
+</body>
+</html>

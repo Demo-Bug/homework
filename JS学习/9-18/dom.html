@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Dom</title>
+</head>
+<style>
+	#box{
+		width: 300px;
+		height: 300px;
+		background: pink;
+	}
+	.box{
+		width: 300px;
+		height: 300px;
+		background: pink;
+	}
+	div{
+		width: 300px;
+		height: 300px;
+		background: pink;
+	}
+</style>
+<body>
+    <!-- <div id = 'box'></div>
+    <div class = 'box'></div>
+    <div class = 'box'></div> -->
+
+
+    <!-- <div>哈喽啊</div> -->
+
+
+    <div id="box" class="hi"></div>
+    
+	<script>
+		/*dom  document*/
+		//console.dir(document);
+		//doncument.title = 'DOM';              //这里是修改title 可以修改成功
+		//document.URL = 'http//:www.baidu.com' //这里是想修改document.URL但是是不会修改成功的
+		//document.bgColor = 'red';               //修改背景色
+		
+		/*let box = document.getElementById('box');    //第一种获取方法、通过ID 
+		box.style.width = '500px';*/
+
+		/*let box = document.getElementsByTagName('div');  //第二种获取方法、通过标签名
+		box[0].style.background = 'blue';*/
+
+		/*let box = document.getElementsByClassName('box');  //第一种获取方法、通过类名
+		console.log(box)
+		box[1].style.background = 'red';*/
+
+		//document.all;  //获取页面中的所有元素
+		//document.getElementsByTagName('*');//获取页面中的所有元素
+		
+
+
+        //let divs = document.getElementsByTagName('div');
+        //divs[0].innerText = '你好啊';    //修改div里面的内容、
+        //divs[0].textContent = '这样也可以啊';
+        //divs[0].innerHTML = '<h3>这样还可以啊</h3>';//这个里面可以识别标签对，上面的俩不识别
+        
+
+
+        /*let divs = document.getElementsByTagName('div');
+        divs[0].id = 'hello'                //获取id
+        console.log(divs[0].id = 'hello')   //修改id
+
+        console.log(divs[0].className = 'en')//修改类名*/
+
+
+        // console.log(divs.style.属性（比如background）)//这个只能获取行内样式
+        
+
+        // getComputedStyle((a,b).属性) //a是要获取属性的对象，b是默认值 null
+        
+
+        /*事件  事件源  事件处理函数*/
+	</script>
+</body>
+</html>

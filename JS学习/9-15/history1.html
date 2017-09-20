@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>history</title>
+</head>
+<body>
+    <h1>
+    	<a href="history.html">history.html</a>
+    </h1>
+    <button id = 'forward'>前进</button>
+    <button id = 'back'>后退</button>
+    <button id = 'refresh'>刷新</button>
+
+	<script>
+	    /*  length  forward(前进)  back(后退)   go(正为前进0为刷新负为后退)  */
+		//window.history
+		//alert(history.length);    //页面被访问的次数
+		//history.back();
+		let forward = document.getElementById('forward');
+		let back = document.getElementById('back');
+		let refresh = document.getElementById('refresh');
+		alert(history.length);
+		forward.onclick = function(){
+			history.go(1);
+		}
+		back.onclick = function(){
+			history.go(-1);
+		}
+		refresh.onclick = function(){
+			history.go(0);
+		}
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>MyArray</title>
+</head>
+<body>
+	<script>
+		/*var arr = new Array('a','b','c','d','e');
+		console.log(arr);*/
+	    let arr = new MyInformation('赵路','男',165 + 'cm','运城人',55 + '公斤','优逸客','WUIF1707');
+	    function MyInformation(){
+	    	/*this[0] = arguments[0];
+	    	this[1] = arguments[1];
+	    	this[2] = arguments[2];
+	    	this[3] = arguments[3];
+	    	this[4] = arguments[4];
+	    	this[5] = arguments[5];
+	    	this[6] = arguments[6];*/
+	    	for(let i = 0; i < arguments.length; i++){
+	    		this[i] = arguments[i];
+	    	}
+	    	this.length = arguments.length;
+	    	/*添加一个方法让自己创造的这个函数可以去添加*/
+	    	this.add = function(){
+	    		for(let i = 0; i < arguments.length; i++){
+	    			this[this.length] = arguments[i];
+	    			this.length++;
+	    		}
+	    	}
+	    	this.indexOf = function(value){
+	    	for(i = 0; i < this.length; i++){
+	    		if(this[i] == value){
+	    			return i;
+	    		    }
+	    	    }
+	    	return 'NO';
+	        }
+	    }
+	    console.log(arr);
+	    arr.add(1,2,'a','b','bb');
+	    console.log(arr);
+
+	    /*indexOf   lastindexOf   includes   reverse   join   sort       */ 
+	    /*some    every    map    filter*/
+	    //查找数组中的某一个元素
+	    
+	    console.log(arr.indexOf(1));
+	</script>
+</body>
+</html>

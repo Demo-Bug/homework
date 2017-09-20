@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>prototype</title>
+</head>
+<body>
+	<script>
+	    let person = new Person('张三','男',23);
+		function Person(name,sex,age){
+			this.name = name;
+			this.sex = sex;
+			this.age = age;
+			//this.brain = '脑子'
+			this.brain = `${this.name}脑子`
+			this.say = function(){
+				alert('说话');
+			}
+			this.height = function(a){
+				alert(a)
+			}
+			this.study = function(){
+				alert(this.brain);
+			}
+			this.speech = function(){
+				this.say();
+			}
+			this.head = function(value){
+				this.height(value)
+			}
+		}
+		person.study();
+		person.speech();
+		person.head(175)
+		console.log(person);
+	</script>
+</body>
+</html>

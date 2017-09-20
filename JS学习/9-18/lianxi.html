@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<style>
+    button{
+    	width: 60px;
+    	height: 60px;
+    	background: red;
+    	border-radius: 5px;
+    	border: none;
+    }
+	#box{
+		width: 300px;
+		height: 300px;
+		background: pink;
+		margin-top: 10px;
+		transition: 0.5s;
+	}
+</style>
+<body>
+	<button>出现</button>
+	<button>消失</button>
+	<button>共用</button>
+	<div id = 'box'></div>
+
+	<script>
+		let hezi = document.getElementById('box');
+		let dianji = document.getElementsByTagName('button');
+		let flag = true;
+		dianji[0].onclick = function(){
+			hezi.style.height = '300px';
+		}
+		dianji[1].onclick = function(){
+			hezi.style.height = 0;
+		}
+		dianji[2].onclick = function(){
+			if(flag){
+				hezi.style.height = 0;
+				flag = false;
+			}else{
+				hezi.style.height = '300px';
+				flag = true;
+			}
+		}
+	</script>
+</body>
+
+
+<!-- <body>
+	<button>出现</button>
+	<div id = 'box'></div>
+
+	<script>
+		let hezi = document.getElementById('box');
+		let dianji = document.getElementsByTagName('button');
+		dianji[0].onclick = function(){
+			if(hezi.style.height == '300px'){
+				hezi.style.height = 0;
+			}else{
+				hezi.style.height = '300px';
+			}
+		}
+	</script>
+</body> -->
+</html>

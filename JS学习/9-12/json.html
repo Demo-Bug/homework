@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>json</title>
+</head>
+<body>
+	<script>
+		let zhangsan = {}
+		//let zhangsan = new Object()   //这个与上面的 let zhangsan = {} 是等价的
+		zhangsan.age = 23
+		zhangsan.classs = 'WUIF1707'
+		zhangsan.sex = '男'
+		zhangsan.name = '张三'
+		zhangsan.say = function(){
+			alert(zhangsan.name)
+		}
+		alert(zhangsan.constructor)
+		console.log(zhangsan)
+		zhangsan.say()
+		let lisi = {}	
+	</script>
+
+
+
+	<script>
+		let wangwu = {
+			'name' : '王五',
+			'sex' : '男',
+			"age" : 18,
+			height : 175,
+			say : function(){
+				alert(111)
+			},
+			love : '女'
+		}
+		console.log(wangwu)
+		wangwu.say()
+	</script>
+
+
+	<script>
+		let jie = {
+			name :  '高捷',
+			sex : '女',
+			'age' : 23,
+			height : 160,
+			say : function(){
+				alert('对象是赵路')
+			},
+			home : '太原'
+		}
+		console.log(jie)
+		jie.say()
+		alert(jie.constructor)
+		for(let i in jie){
+			console.log(`${i}---${jie[i]}`)
+		}
+	</script>
+
+
+	<script>
+		let zlu = {}
+		zlu.name = '赵路'
+		zlu.sex = '男'
+		zlu.age = 23
+		zlu.height = 165
+		zlu.say = function(){
+			alert('这是赵路')
+		}
+		zlu.home = '运城'
+		console.log(zlu)
+		zlu.say()
+		for(let i in zlu){
+			console.log(`${i}---${zlu[i]}`)
+		}
+	</script>
+</body>
+</html>

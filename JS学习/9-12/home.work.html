@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>homework</title>
+</head>
+<body>
+	<script>
+	    let arr = new MyArray(1,2,11,3,12);
+
+
+	    function MyArray(){
+	    	for(let i = 0; i < arguments.length; i++){
+	    		this[i] = arguments[i];
+	    	}
+	    	this.length = arguments.length;
+
+
+	    	/*添加一个方法让自己创造的这个函数可以去添加*/
+
+
+	    	this.add = function(){
+	    		for(let i = 0; i < arguments.length; i++){
+	    			this[this.length] = arguments[i];
+	    			this.length++;
+	    		}
+	    	}
+
+
+	    	/*一、添加一个方法让自己创造的这个函数可以去查找数组中的某一个函数首次出现的位置*/
+
+/*	    	this.indexOf = function(value){
+	    	for(i = 0; i < this.length; i++){
+	    		if(this[i] == value){
+	    			return i;
+	    		    }
+	    	    }
+	    	return 'NO';
+	        }*/
+
+	    	/*二、添加一个方法让自己创造的这个函数去查找数组中的某一个函数最后一次出现的位置*/
+	    	/*this.lastindexOf = function(value){
+	    	for(i = this.length-1; i >= 0; i--){
+	    		if(this[i] == value){
+	    			return i;
+	    		    }
+	    	    }
+	    	return 'NO';
+	        }*/
+
+	    	/*三、添加一个方法让自己创造的这个函数可以去排除数组中的某一中函数类型*/
+/*	    	this.some = function(fn){
+	    		for(i = 0; i < this.length; i++){
+	    			if(fn(this[i])){
+	    			return true;
+	    		    }
+	         	}
+	         	return false;
+	        }*/
+
+
+	    	/*四、添加一个方法让自己创造的这个函数可以去判断数组中的元素是否都是某一中函数类型*/
+/*	    	this.every = function(fn){
+	    		for(i = 0; i < this.length; i++){
+	    			if(fn(this[i])){
+	    			continue;
+	    		    }else{
+	    		    	return false;
+	    		    }
+	         	}
+	         	return true;
+	        }*/
+
+
+	    	/*五、添加一个方法让自己创造的这个函数可以去实现任何一种算法*/
+            /*this.map = function(fn){
+	    		var newarr = [];
+	    		for(i = 0; i < this.length; i++){
+	    			newarr[newarr.length] = fn(this[i]);
+	    		}
+	    		return newarr;
+	    	}*/
+	    	/*不定义新数组的方法*/
+	    	this.map = function(fn){
+	    		var newarr = new MyArray();
+	    		for(i = 0; i < this.length; i++){
+	    			newarr.add(fn(this[i],i));
+	    		}
+	    		return newarr;
+	    	}
+
+
+	    	/*六、添加一个方法让自己创造的这个函数可以去过滤*/
+	    	/*this.filter = function(fn){
+	    		var newarr = [];
+	    		for(i = 0; i < this.length; i++){
+	    			if(fn(this[i])){
+	    			    newarr[newarr.length] = this[i];
+	    		    }
+	    		}
+	    		return newarr;
+	    	}*/
+
+	    	/*老师讲的  不去创建新数组的情况*/
+	    	/*this.delNum = function(){
+	    		var newarr = new MyArray();
+	    		for(let i = 0; i < this.length; i++){
+	    			if(this[i] > 2){
+	    			    newarr.add(this[i]);
+	    		    }
+	    		}
+	    		return newarr;
+	    	}*/
+
+	    	/*七、添加一个方法让自己创造的这个函数反排*/
+	    /*	this.reverse = function(){
+	    		var newarr = [];
+	    	    for(let i = this.length-1; i >= 0; i--){
+	    			newarr[newarr.length] = this[i]
+	    	    }
+	    	    return newarr;
+	        }
+	    }*/
+	    this.reverse = function(){
+	    		var newarr = new MyArray();
+	    	    for(let i = this.length-1; i >= 0; i--){
+	    			newarr.add(this[i]);
+	    	    }
+	    	    return newarr;
+	        }
+
+	    	/*八、添加一个方法让自己创造的这个函数排序*/
+	    	/*this.sort = function(){
+	    		for(i = 0; i < this.length; i++){
+	    			for(j = i+1; j < this.length; j++){
+	    			    if(this[i] > this[j]){
+	    				    var k = this[i];
+	    				    this[i] = this[j];
+	    				    this[j] = k;
+	    			    }
+	    		    }
+	    		}
+	    		return this;
+	        }*/
+
+	    	/*九、添加一个方法让自己创造的这个函数连接*/
+	    	/*this.join = function(){
+	    		var newarr = '';
+	    		for(i = 0; i < this.length; i++){
+	    			if(i < this.length-1){
+	    			    newarr = newarr + this[i] + '*';
+	    		    }else{
+	    		    	newarr = newarr + this[i];
+	    		    }
+	    	    }
+	    		return newarr;
+	        }*/
+
+
+	    }
+
+        /*let result = arr.some(function(value){
+	    		return typeof value == 'number';
+	    	})
+
+        let result1 = arr.every(function(value){
+	    		//return value > 2;
+	    		return typeof value == 'string';
+	    	})
+
+        let result2 = arr.map(function(value){
+        	return value * 2;
+        })*/
+
+        /*let result3 = arr.filter(function(value){
+        	return value > 5;
+        })*/
+        // 新方法
+        /*let result2 = arr.map(function(value,x){
+        	return value * x;
+        })*/
+
+
+	    console.log(arr);
+	    //arr.add(16,6,8,20,40);
+	    //console.log(arr);
+	    // console.log(arr.indexOf(1));
+	    //console.log(arr.lastindexOf(1));
+	    //console.log(result);
+	    //console.log(result1);
+	    //console.log(result2);
+	    //console.log(result3);
+	    //arr.reverse();
+	    //console.log(arr.reverse());
+	    //console.log(arr.sort());
+	    //document.write(arr.join());
+	    //console.log(arr.delNum());
+	    //console.log(result2);
+	    console.log(arr.reverse())
+	</script>	
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	function Student(){
+
+	}
+	var zhangsan = new Student()
+	zhangsan.name = '张三' + '&nbsp'
+	zhangsan.class = 'WUIF1707' + '&nbsp'
+	zhangsan.age = 23 + '&nbsp'
+	zhangsan.sex = '男' + '&nbsp'                   //属性
+	zhangsan.height = 175 + 'cm' + '&nbsp'
+	zhangsan.say = function(){                      //方法
+	    document.write(zhangsan.height)
+	}
+	document.write(zhangsan.name)
+	document.write(zhangsan.class)
+	document.write(zhangsan.age)
+	document.write(zhangsan.sex)
+	zhangsan.say()
+    </script>
+
+
+
+	<script>
+	function Student(){
+		this.age = 28
+		this.class = 'WUIF1707'
+		this.sex = '女'
+		this.say = function(){
+			alert(165)
+		}
+	}
+	var wangwu = new Student()
+	console.log(wangwu)
+    </script>
+
+	<script>
+		function Student(name,age,sex,classs){
+			this.name = name
+			this.age = age
+			this.sex = sex
+			this.class = classs
+			this.say = function(){
+				alert(165)
+			}
+		}
+		var lizelu = new Student('李泽路',23,'男','WUIF1707')
+		console.log(lizelu)
+	</script>
+
+	<script>
+		function iPhone(name,color,size,money){
+			this.name = name
+			this.color = color
+			this.size = size
+			this.money = money
+		}
+		let iPhone8 = new iPhone('iPhone8','black','134'*'10',8999)
+		//console.log(iPhone8)
+		
+        // 遍历
+		for(let i in iPhone8){
+            console.log(`${i}---${iPhone8[i]}`)
+        }
+
+	</script>
+</body>
+</html>

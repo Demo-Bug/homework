@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>prototype</title>
+</head>
+<body>
+	<script>
+		function Person(name,age,sex){
+			this.name = name;
+			this.age = age;
+			this.sex = sex;
+		}
+		//原型   对象
+		Person.prototype = {
+			say : function(){
+				alert('说话');
+			},
+			play : function(){
+				alert('玩儿');
+			},
+			speech : function(){
+				alert('演讲');
+			},
+		}
+		Person.prototype.eat = function(){
+			alert('吃饭');
+		}
+		let zhangsan = new Person('张三',23,'男');
+		let lisi = new Person('李四',25,'女');
+		console.log(zhangsan);
+		console.log(lisi);
+		//document.write(zhangsan);
+		zhangsan.say();
+		zhangsan.eat();
+		alert(zhangsan.name === lisi.name);
+		alert(zhangsan.say === lisi.say);
+		/*删除对象的某一个熟悉和方法
+		delete zhangsan.name;
+		delete zhangsan.speech;*/
+		/*删除某一个对象
+		zhangsan = null;*/
+	</script>
+
+	<!-- <script>
+		function Student(name){
+			this.name = name;
+		}
+		function Person(name){
+			this.name = name;
+		}
+		let wangwu = new Student;
+		let zhaoliu = new Person;
+		/*判断王五是否是从Student里面实例化出来的*/
+		//wangwu instanceof Student   //是就是true  不是就是false
+		console.log(wangwu instanceof Student); 
+		console.log(zhaoliu instanceof Student); 
+		let arr = [];
+		console.log(arr instanceof Array);
+	</script> -->
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>class</title>
+</head>
+<body>
+	<script>
+		class Student{
+			constructor(){
+				this.name = '张三'
+				this.age = 23
+				this.say = function(){    //这里是方法
+					alert('aa')
+				}
+			}
+			study(){                      //这里直接就是方法
+				alert('学习')
+			}
+		}
+		//let zhangsan = new Student
+		let zhangsan = new Student()
+		console.log(zhangsan)
+		zhangsan.say()
+		zhangsan.study()
+	</script>
+</body>
+</html>

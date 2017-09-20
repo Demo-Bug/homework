@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="lianxi.css">
+</head>
+<body>
+	<main>
+		<div>
+			<input type="text" placeholder="请输入用户名" name="username" maxlength="10" minlength="1" value="" id='username'>
+			<input type="password" placeholder="请输入密码" name="password" maxlength="10" minlength="1" value="" id='password'>
+			<button id="dianba"><a href="">提交</a></button>
+		</div>
+	</main>
+
+	<script>
+		let username = document.getElementById('username');
+		let password = document.getElementById('password');
+		let dianba = document.getElementById('dianba');
+		dianba.onclick = function(){
+			if(username.value.trim() == 'zhaolu' && password.value.trim() == 'gaojie'){
+			    alert('success');
+		    }else{
+		    	location.replace('lianxi2.html');
+		    }
+		}
+		
+	</script>
+</body>
+</html>

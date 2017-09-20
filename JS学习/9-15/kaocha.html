@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>检查</title>
+</head>
+<body>
+	<script>
+	    function table(a){
+		    document.write('<table border = 1 cellspacing = 0>')
+		    for(var i = 0 ; i < a ; i++){
+			    document.write('<tr>')
+			    for(var j = 0 ; j < a ; j++){
+				    document.write('<td>' + i + '+' + j + '</td>');
+			    }
+			    document.write('</tr>')
+		    }
+		    document.write('</table>');
+	    }
+	    table(11);
+	</script>
+
+	<script>
+	function table(a){
+		for(var i = 1 ; i <= a ; i++){
+			for(k = 1 ; k <= a-i ; k++){
+				document.write('_');
+			}
+			for(j = 1 ; j <= 2*i-1 ; j++){
+				document.write('*');
+			}
+			document.write('</br>')
+		}
+	}
+	table(11)
+	</script>
+</body>
+</html>

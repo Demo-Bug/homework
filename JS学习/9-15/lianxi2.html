@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="lianxi2.css">
+	<title>Document</title>
+</head>
+<body>
+	<main>
+		<div>你输入错了!</div>
+		<div><span id='info'>3</span>s后返回上一级页面</div>
+	</main>
+
+
+	<script>
+		let info = document.getElementById('info');
+		setInterval(function(){
+			if(info.innerText > 1){
+				info.innerText -=1
+			}else{
+				location.replace('lianxi.html');
+			}
+		},1000)
+	</script>
+</body>
+</html>

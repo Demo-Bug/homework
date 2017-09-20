@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Math</title>
+</head>
+<body>
+	<script>
+	    /*绝对值*/
+		//console.log(Math.abs(10));
+		//console.log(Math.abs(-10));
+		
+		/*求最大值*/
+		//console.log(Math.max(1,2,33,5,12));
+		
+		/*求最小值*/
+		//console.log(Math.min(1,2,33,5,12));
+		
+		/*求近似值*/
+		//console.log(Math.round(10.54));
+		//console.log(Math.round(-10.53));    //  -11
+		//console.log(Math.round(-10.5));     //  -10
+		
+		/*向上取整，比如10.4就是11，要变成一个比10.4大的最近的整数*/
+		//console.log(Math.ceil(10.4));   //11
+		//console.log(Math.ceil(-10.4));  // -10
+		
+		/*向下取整，比如10.4就是11，要变成一个比10.4大的最近的整数*/
+		//console.log(Math.floor(5.4));   //5
+		
+		/*随机取数，只能在0-1之间取数，取不到0也取不到1，刷新一次网页数字就变一次*/
+		//for(i = 0; i < 10; i++)
+		//console.log(Math.random());
+	    
+	    /*取的是0--10的十个随机数*/
+	    //for(i = 0; i < 10; i++)
+		//console.log(Math.random()*10);
+	    
+	    /*取的是0--10的一个随机数*/
+		//console.log(Math.random()*10);
+		
+		/*取的是10--20的十个随机数*/
+	    //for(i = 0; i < 10; i++){
+		//console.log(Math.random()*10+10);}
+
+	    /*取的是5--15的十个随机数*/
+	    //for(i = 0; i < 10; i++){
+		//console.log(Math.random()*15+5);}
+
+
+	    /*求x的y次方*/
+	    //console.log(Math.pow(x,y));
+
+
+	    /*求根号x*/
+	    //console.log(Math.sqrt(x));
+
+
+	    //console.log(Math.sin(π/6));
+	    
+        //Math.floor(Math.random()*arr.length);
+	   /* let arr = [1,2,3,'a','b','c'];
+	    function sj(arr,index){
+	    	let arr1 = [];
+	    	let arr2 = [];  
+	    	    do{
+	    	    	let num = Math.floor(Math.random()*arr.length);
+	    		    if(!arr1.includes(arr[num])){
+	    			    arr1.push(num);
+	    			    arr2.push(arr[num]);
+	    	        }
+	    	    }while(arr2.length < index);    
+	            return arr2;
+	    }
+	    console.log(sj(arr,4));*/
+       /* let arr = [1,2,3,'a','b','c'];
+	    function sj(arr,index){
+	    	let arr1 = [];
+	    	let arr2 = [];
+	    	while(arr2.length < index){
+	    		let num = Math.floor(Math.random()*arr.length);
+	    		if(!arr1.includes(num)){
+	    			arr1.push(num);
+	    			arr2.push(arr[num]);
+	    		}
+	    	}
+	    	return arr2;
+	    }
+	    console.log(sj(arr,5));*/
+	    
+        /*随机抽取四个元素（可以重复）*/
+        /*let arr = [1,2,3,'a','b','c'];
+	    function sj(arr,num){
+	    	let newarr = [];
+	    	for(i = 0; i < num; i++){
+	    		let shu = Math.floor(Math.random()*arr.length);
+	    		newarr.push(arr[shu]);
+	    	}
+	    	return newarr;
+	    }
+	    console.log(sj(arr,4));*/
+	</script> 
+
+	<!-- <script>
+		let arr = [1,2,34,5,6,78];
+		function sj(arr,num){
+			let arr1 = [];
+			let arr2 = [];
+			while(arr2.length < num){
+				let value = Math.floor(Math.random()*arr.length);
+				if(!arr1.includes(value)){
+					arr1.push(value);
+					arr2.push(arr[value]);
+				}
+			}
+			return arr2;
+		}
+		console.log(sj(arr,3))
+	</script>  -->
+	<script>
+		let arr = [1,2,34,5,6,78];
+		function sj(arr,num){
+			let newarr = [];
+			for(i = 0 ; i < num ; i++){
+				let value = Math.floor(Math.random()*arr.length);
+			    while(newarr.includes(arr[value])){
+				    value = Math.floor(Math.random()*arr.length);
+			    }
+				newarr.push(arr[value]);
+			}
+			return newarr;
+		}
+		console.log(sj(arr,3))
+	</script>
+</body>
+</html>

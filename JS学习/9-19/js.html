@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="js.js"></script>
+</head>
+<body>
+    <div class="one">
+        <div class="box box2"></div>
+        <div class="box box1 box2"></div>
+        <div class="box2"></div>
+    </div>
+    <div class="box1"></div>
+    <div class="two">
+        <div class="box2"></div>
+    </div>
+    <ul>
+
+    </ul>
+    <div  id="boxx"></div>
+
+
+
+	<script>
+		console.log($('.one'));
+		$('.one')[0].innerHTML = '哈喽';	
+		$('.box2')[0].innerHTML = '哈1喽';	
+		$('ul')[0].innerHTML = '哈喽a'
+		$('#boxx').innerHTML = '哈喽aaa';
+	</script>
+</body>
+</html>

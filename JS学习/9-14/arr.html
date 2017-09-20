@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>数组</title>
+</head>
+<body>
+<!-- 	<script>
+	let arr = [1,2,3,4,5,6]
+	//alert(arr.length);
+	arr.length = 2;
+	console.log(arr);     //输出之后就是  [1,2]
+</script> -->
+
+	<!--  <script>
+		//let arr1 = [1,2,3,4,5,6,7]
+		//arr1.push('x','y','z');
+		//arr1.unshift('x','y','z');
+		//console.log(arr1.push('x','y','z'));      //  11
+		//console.log(arr1);                        // [1,2,3,4,5,'x','y','z']
+		//arr1.splice(1,3);
+		//console.log(arr1);                          // [1,5,6,7]
+		//arr1.splice(1,2,'a','b');
+		//console.log(arr1);                          //[1,'a','b',4,5,6,7]
+		
+	
+	
+		/*把一个数组和另外一个数组合并*/
+		//let arr2 = ['a','b','c'];
+		//arr1.push(...arr2);           //方法一、这是最简单的
+		/*for(i = 0; i < arr2.length; i++){       //方法二、
+			arr1.push(arr2[i]);
+		}*/
+	
+	
+	        /*合并*/
+		// let arr2 = ['b','c',3,4,5,6,7];	
+		// let arr3 = ['v','y',3,4,5,6,7];
+		// arr1.concat(arr2,arr3);
+		// console.log(arr1.concat(arr2,arr3));
+		
+	
+	        let arr1 = [1,13,45,14,7,4,101];
+	        //arr1.sort();                 //括号里面没东西默认按照ASCLL值来比较
+	        //console.log(arr1);           //[1, 101, 13, 14, 4, 45, 7]
+	        /*降序排序*/         /*升序就是把 <  变成  >*/
+	        arr1.sort(function(a,b){
+	        	return a - b < 0;
+	        })
+	        console.log(arr1);
+	        /*sonme   every   map   filter   forEach(遍历，没有返回值)*/
+	        /*forEach*/
+	        let sum = 0;
+	        let result = arr.forEach(function(value,index,object)){
+	        	sum += value;           //  {里面写的是循环体}
+	        }
+	        console.log(result);        //输出是一个undefined
+	</script> -->
+
+	<!--  <script>
+		/*筛选filter*/  /*以下 value指的是数组的元素，index指的是数组中元素的下标，object指的是数组*/
+		let arr1 = [1,2,3,4,5,6,7,8];
+		let ou = arr1.filter(function(value,index,object){
+			return value%2 == 0;
+		})
+		console.log(ou);
+	
+		/*映射map*/
+		let she = arr1.map(function(value,index,object){
+			return value + index;
+		})
+		// let she = arr1.map((value,index) => value + index);
+		console.log(she);
+	</script> -->
+
+<!-- 	<script>
+	/*求和*/
+	let arr1 = [11,123,13,4,565,32];
+	let sum = 0 ;
+	arr1.forEach(value => sum += value);
+	console.log(sum);
+</script> -->
+
+
+<!-- 	<script>
+	/*去重*/
+	let arrr = [1,2,9,3,4,5,6,7,6,5,4,2,6];
+	function quchong(arr){
+		let newarr = [];
+	    for(i = 0; i < arr.length; i++){
+	    	if(!newarr.includes(arr[i])){
+	    		newarr.push(arr[i]);
+	    	}
+	    }
+	    return newarr;
+	}
+	console.log(quchong(arrr));
+
+	function qukong(arr){
+		let newarr = [];
+		for(let i = 0; i < arr.length; i++){
+			let flag = true;
+			for(let j = i + 1; j < arr.length; j++){
+				if(arr[i] == arr[j]){
+					flag = false;
+					break;
+				}
+			}
+			if(flag){
+				newarr.push(arr[i]);
+			}
+		}
+		return newarr;
+	}
+	console.log(qukong(arrr));
+</script> -->
+
+
+<!-- 
+	<script>
+	let arrr = [1,2,9,3,4,5,6,7,6,5,4,2,6];
+	Array.prototype.delRepeat = function(){	
+		let newarr = [];
+		for(let i = 0; i < this.length; i++){
+			let flag = true;
+			for(let j = i + 1; j < this.length; j++){
+				if(this[i] == this[j]){
+			    flag = false;
+				break;
+				}    
+		    }
+	    if(flag){
+			newarr.push(this[i]);
+		}
+	    }
+		return newarr;
+	}
+	console.log(arrr.delRepeat());
+	</script> -->
+
+
+	<script>
+	    let arrr = [1,2,3,4,4,3,4,4,4,4,5];
+		function delRepeate(arr){
+		    for(let i = 0; i < arr.length; i++){
+		    	for(let j = i+1; j < arr.length; j++){
+		    		if(arr[i] == arr[j]){
+		    			arr.splice(i,1);
+		    			i--;
+		    		}
+		    	}
+		    }
+		    return arr;
+		}
+		console.log(delRepeate(arrr));
+	</script>
+</body>
+</html>

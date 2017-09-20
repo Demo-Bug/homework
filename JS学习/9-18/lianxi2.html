@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<style>
+	.box{
+		width: 200px;
+		height: 100px;
+		background: pink;
+		margin: 50px auto;
+	}
+	#red{
+		background: red;
+	}
+	#yellow{
+		background: yellow;
+	}
+	#green{
+		background: green;
+	}
+	#black{
+		background: black;
+	}
+</style>
+<body>
+	<div class="box"></div>
+
+<!-- 	<script>
+	let box = document.getElementsByClassName('box');
+	let t = setInterval(fn,50);
+	//let tt = setInterval(fnn,100);
+	//let aa = setInterval(a,200);
+	let speed = 10;
+	function fn(){
+		let w = parseInt(getComputedStyle(box[0],null).width);
+		let h = parseInt((getComputedStyle(box[0],null).height))
+		if(w > 600 && h > 200){
+			//clearInterval(t);
+			speed = -speed;
+		}
+		if(w < 200 && h < 100){
+			//clearInterval(t);
+			speed = -speed;
+		}
+		box[0].style.width = `${w + speed}px`;
+		box[0].style.height = `${h + speed}px`;
+	}
+</script> -->
+
+
+	<script>
+		let box = document.getElementsByClassName('box');
+		let t = setInterval(fn,50);
+		let speed = 10;
+		let speeds = 20;
+		function fn(){
+			let w = parseInt(getComputedStyle(box[0],null).width);
+			let h = parseInt((getComputedStyle(box[0],null).height))
+			if(w > 600 ){
+				speed = -speed;
+				box[0].id = 'red';
+			}
+			if(w < 200 ){
+				speed = -speed;
+				box[0].id = 'green';
+			}
+			if(h > 200){
+				speeds = -speeds;
+				box[0].id = 'black';
+			}
+			if(h < 100){
+				speeds = -speeds;
+				box[0].id = 'yellow';
+			}
+			box[0].style.width = `${w + speed}px`;
+			box[0].style.height = `${h + speeds}px`;
+		}
+	</script>
+</body>
+</html>

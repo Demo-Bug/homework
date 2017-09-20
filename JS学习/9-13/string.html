@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>string</title>
+</head>
+<body>
+	<script>
+		/* Object  String  Number  Boolean  Array  Date  RegExp   bo */
+		let str = 'abcdec';
+		console.log(str.constructor);
+		console.log(str.__proto__);
+		console.log(str.length);
+		str.charAt(2);                   //返回指定位置的字符
+		console.log(str.charAt(2));      // 返回的就是c
+		str.charCodeAt(1);                   //返回指定位置的字符的ASCII值
+		console.log(str.charCodeAt(1));      // 返回的就是b的ASCII值也就是98
+		String.fromCharCode(99);                   //)返回Unicode编码所对应的字符串; 这里是String
+		console.log(String.fromCharCode(99));      // 返回的就是c的ASCII值也就是99
+
+		str.indexOf('c');                  //判断c首次出现的位置
+		console.log(str.indexOf('c'));
+
+		str.lastIndexOf('c');             //判断c最后一次出现的位置
+		console.log(str.lastIndexOf('c'));
+
+		function includes (oStr,fStr){
+			let result = oStr.indexOf(fStr);
+			if(result != -1){
+				return true;
+			}else{
+				return false;
+			}
+		}
+
+		/*let includes = str.includes('abf');
+		alert(inculdes);*/
+
+
+		/*截取*/
+		//let str1 = 'abcdefg';
+		//let jiequ = str1.slice(1,4);   /*截取的是bcd   从b开始截取到e但是不包括e*/
+		//let jiequ = str1.slice(0,-4);   /*截取的是abc   从末尾开始数数*/
+		//console.log(jiequ);
+
+
+		/*替换*/
+	/*	let tihuan = str1.replace('bcd','***');
+		console.log(tihuan);*/
+
+		/*替换全部的某一个*/
+		let str2 = 'abcdabcfabderabfd';
+		function replaceAlll(str,rstr){
+			do{
+				str = str.replace(rstr,'**');
+			}while(str.includes(rstr))
+			return str;
+		}
+		console.log(replaceAlll(str2,'ab'));
+
+		/*替换全部的某几个*/
+		let str3 = 'abcdeabcdeabcdeabcde';
+		function replaceAll(str,rStr){
+			let star = '';
+			for(let i = 0; i < rStr.length; i++){
+				star += '*';
+			}
+			while(str.includes(rStr)){
+				str = str.replace(rStr,star)
+			}
+			return str;
+		}
+		console.log(replaceAll(str3,'abcd'));
+
+
+		/*替换全部的某几个*/
+		let str4 = 'abcdeabcdeabcdeabcde';
+		function replaceAll(str,rStr){
+			let star = '*'.repeat(rStr.length);
+			// for(let i = 0; i < rStr.length; i++){
+			// 	star += '*';
+			// }
+			while(str.includes(rStr)){
+				str = str.replace(rStr,star)
+			}
+			return str;
+		}
+		console.log(replaceAll(str4,'abc'));
+
+
+
+		//*匹配*/
+		let str5 = 'abcdefgh';
+		let result = str5.match('cd');
+		console.log(result);
+
+        /*去除空格*/
+        let str6 = ' abbcfaf ';
+        let re = str6.trim();
+        console.log(re);
+        console.log(str6);
+
+        // 转换
+        let str7 = 'a-b-c-d-e-f';
+        //let ree = str7.split('-',9);       //拆分     '-'是按什么拆分  9是长度
+        //let ree = str7.toUpperCase();      //换成大写
+        //let ree = str7.toLowerCase();      //换成小写
+        document.write(str7.fontcolor('pink'));//字体颜色
+        //document.write(str7.fontsize('87'));   //字体大小
+        document.write(str7.sup());           //字体右上角显示  就和数学的几次方一样
+        //console.log(ree);
+	</script>
+<!-- 
+	<script>
+	let url1 = 'http://www.baidu.comhttp://www.baidu.comhttp://www.baidu.comhttp://www.baidu.comhttp://www.baidu.comhttp://www.baidu.comhttp://www.baidu.comhttp://www.baidu.comhttp://www.baidu.comhttp://www.baidu.comhttp://www.baidu.com';
+	let pos = '';
+	function replaceAll(str,rStr){
+		let star = '*'.repeat(rStr.length);
+		while(str.includes(rStr)){
+			pos += str.indexOf(rStr) + ' ';
+			str = str.replace(rStr,star);
+		}
+		return str;
+	}
+	console.log(replaceAll(url1,'baidu'));
+	console.log(pos.trimRight());
+</script> -->
+
+<!-- 	<script>
+let url = 'http://www.baidu.comhttp://www.baidu.comhttp://www.baidu.comhttp://www.baidu.comhttp://www.baidu.comhttp://www.baidu.comhttp://www.baidu.comhttp://www.baidu.comhttp://www.baidu.comhttp://www.baidu.comhttp://www.baidu.com';
+function Position(str,rStr){
+	let arr = [];
+	let star = '*'.repeat(rStr.length);
+	while(str.includes(rStr)){
+		arr.push(str.indexOf(rStr));
+		//arr += str.indexOf(rStr);
+		str = str.replace(rStr,star);
+	}
+	return arr;
+}
+console.log(Position(url,'baidu'));
+</script> -->
+
+
+	<script>
+		let url = 'http://www.baidu.comhttp://www.baidu.comhttp://www.baidu.comhttp://www.baidu.comhttp://www.baidu.comhttp://www.baidu.comhttp://www.baidu.comhttp://www.baidu.comhttp://www.baidu.comhttp://www.baidu.comhttp://www.baidu.comhttp://www.baidu.comhttp://www.baidu.comhttp://www.baidu.comhttp://www.baidu.com';
+		function Position(str,rStr){
+			let pos = [];
+			for(let i = 0; i < str.length; i++){
+				//let jq = str.slice(i,i+5);
+				let jq = str.substr(i,rStr.length);
+				if(jq == rStr){
+					pos.push(i);
+				}
+			}
+			return pos;
+		}
+		document.write(Position(url,'baidu'));
+	</script>
+</body>
+</html>

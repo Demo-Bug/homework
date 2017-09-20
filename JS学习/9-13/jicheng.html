@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>继承</title>
+</head>
+<body>
+	<script>
+		function Person(){
+			this.name = '张三';
+			this.age = 23;
+			this.say = function(){
+				alert('说话');
+			}
+		}
+		/*Person.prototype = {
+			sex : function(){
+				alert('男');
+			}
+		}*/ 
+		Person.prototype = {
+			sex : '男',
+		}
+		function Student(){
+			this.name = '李四';
+			this.age = 25;
+			this.sleep = function(){
+				alert('睡觉');
+			}
+		}
+		Student.prototype = new Person;
+		Student.prototype.play = function(){
+			alert('play');
+		}
+		let zhangsan = new Person();
+		let lisi = new Student();
+		//console.log(zhangsan);
+		console.log(lisi);
+		lisi.say();
+		//lisi.sex();
+		alert(lisi.sex);
+	</script>
+</body>
+</html>
