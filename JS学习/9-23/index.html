@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<style>
+	.box{
+		width: 300px;
+		height: 300px;
+		background: red;
+		/* 添加了下面这个代码，就会把子元素限制在父元素里面 */
+		overflow: auto;
+	}
+	.son{
+		width: 100px;
+		height: 600px;
+		background: pink;
+	}
+</style>
+<body>
+	<div class="box" id="box" active="true">
+		<div class="son"></div>
+	</div>
+
+	<script>
+		let box = document.querySelector('div');
+		/*通过id获取*/
+		//console.log(box.getAttribute('id'));
+		/*通过class获取*/
+		//console.log(box.getAttribute('class'));
+		/*设置属性*/
+		//console.log(box.setAttribute('aa','bb'));
+		
+		box.onscroll = function(){
+			/*获取滚动时候的上下距离*/
+			console.log(box.scrollTop);
+			/*获取滚动时候的左右距离*/
+			console.log(box.scrollLeft);
+		};
+	</script>
+</body>
+</html>

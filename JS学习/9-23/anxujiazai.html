@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+    <style>
+	    .floor{
+	    	width: 1226px;
+            height: 700px;
+            border: 1px solid black;
+            margin-top: 20px;
+	    }
+	    .floor1{
+	    	width: 1226px;
+            height: 700px;
+            border: 1px solid black;
+            margin-top: 20px;
+	    }
+	    .floor img{
+	    	display: block;
+	    	width: 320px;
+	    	height: 320px;
+	    	float: left;
+	    	margin-right: 30px;
+	    	margin-top: 20px;
+	    }
+	    .aside{
+	    	width: 20px;
+	    	height: 150px;
+	    	position: fixed;
+	    	top: 50%;
+	    	left: 20px;
+	    }
+	    .aside div{
+	    	width: 100%;
+	    	height: 30px;
+	    	box-sizing: border-box;
+	    	border-bottom: 1px solid black;
+	    	text-align: center;
+	    	line-height: 30px;
+	    }
+	    .aside div:first-child{
+	    	border-top: 1px solid black;
+	    }
+	    .search{
+	    	width: 100%;
+	    	height: 50px;
+	    	background: pink;
+	    	position: fixed;
+	    	top: -50px;
+	    	left: 0;
+	    }
+	</style>
+<body>
+    <div class="aside">
+    	<div>①</div>
+    	<div>②</div>
+    	<div>③</div>
+    	<div>④</div>
+    	<div>⑤</div>
+    </div>
+	<div class="floor1">
+		<img alt="" src="明星1.png">
+		<img alt="" src="明星2.png">
+		<img alt="" src="明星3.png">
+		<img alt="" src="明星4.png">
+		<img alt="" src="明星5.png">
+	</div>
+	<div class="floor">
+		<img alt="" at="明星1.png">
+		<img alt="" at="明星2.png">
+		<img alt="" at="明星3.png">
+		<img alt="" at="明星4.png">
+		<img alt="" at="明星5.png">
+	</div>
+	<div class="floor">
+		<img alt="" at="明星1.png">
+		<img alt="" at="明星2.png">
+		<img alt="" at="明星3.png">
+		<img alt="" at="明星4.png">
+		<img alt="" at="明星5.png">
+	</div>
+	<div class="floor">
+		<img alt="" at="明星1.png">
+		<img alt="" at="明星2.png">
+		<img alt="" at="明星3.png">
+		<img alt="" at="明星4.png">
+		<img alt="" at="明星5.png">
+	</div>
+	<div class="floor">
+		<img alt="" at="明星1.png">
+		<img alt="" at="明星2.png">
+		<img alt="" at="明星3.png">
+		<img alt="" at="明星4.png">
+		<img alt="" at="明星5.png">
+	</div>
+	<div class="floor">
+		<img alt="" at="明星1.png">
+		<img alt="" at="明星2.png">
+		<img alt="" at="明星3.png">
+		<img alt="" at="明星4.png">
+		<img alt="" at="明星5.png">
+	</div>
+	<div class="search">
+		
+	</div>
+
+	<script>
+		
+			/*方法一获取滑动的时候的数*/
+			//console.log(document.documentElement.scrollTop);
+			/*方法二获取滑动的时候的数*/
+			//console.log(document.body.scrollTop);
+			
+			let gao = window.innerHeight;
+			let floor = document.querySelectorAll('.floor');
+			let aside = document.querySelectorAll('.aside > div');
+			let floorAll = [];
+			let flag = true;
+			let flag1 = true;
+			let search = document.querySelector('.search');
+			let colors = ['red','green','yellow','orange','purple'];
+			floor.forEach(element => {
+				floorAll.push(element.offsetTop);
+			})
+            /*点击变颜色*/
+			aside.forEach((element,index)=>{
+				element.onclick = function(){
+					for(let i = 0 ; i < colors.length ; i++){
+						aside[i].style.background = 'none';
+					}
+					flag = false;
+					animate(document.body,{scrollTop:floorAll[index]},function(){
+						flag = true;
+					});
+					element.style.background = colors[index];
+				}
+			})
+           
+
+
+
+ 			/*滚动变颜色*/
+			window.onscroll = function(){
+				if(!flag){
+					return;
+				}
+				let chao = document.body.scrollTop;
+				if(chao >= 500){
+					if (flag1) {
+						flag1 = !flag1;
+						animate(search,{top:0});
+					}
+				}else{
+					if (!flag1) {
+						flag1 = !flag1;
+						animate(search,{top:-50});
+					}
+				}
+				floorAll.forEach((value,index)=>{
+					if(gao + chao >= value + 400){
+						let imgs = floor[index].getElementsByTagName('img');
+						for(let i = 0 ; i < imgs.length ; i++){
+							imgs[i].src = imgs[i].getAttribute('at');
+						}
+						for(let i = 0 ; i < colors.length ; i++){
+							aside[i].style.background = 'none';   
+					    }
+						aside[index].style.background = colors[index];
+						if(chao <= value){
+							for(let i = 0 ; i < colors.length ; i++){
+								aside[i].style.background = 'none';   
+					    	}
+						}		
+					}
+				})
+			}
+	</script>
+	<script src="../animate.js"></script>
+</body>
+</html>

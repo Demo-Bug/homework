@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		let arr = [
+				{name:'高捷',sex:'女',call:12345,dizhi:'太原'},
+				{name:'朱玉康',sex:'男',call:123451,dizhi:'平遥'}
+			]
+		// localStorage.setItem('students',JSON.stringify(arr));
+		let result = JSON.parse(localStorage.getItem('students'));
+		console.log(result);
+	</script>
+</body>
+</html>

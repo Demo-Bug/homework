@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+    <div class="box">
+    	<ul class="a">
+    		<li></li>
+    		<li></li>
+    		<li></li>
+    	</ul>
+    	<div>我</div>
+    	<span>嗯？</span>
+    	<p class="wode">d</p>
+    	<div>爱</div>
+    	<h1>我欧文欧文</h1>
+    	<div>爱爱爱</div>
+    	<!-- <p></p> -->
+    	<span>
+    		w 
+    	</span>
+    	<div>你</div>
+    </div>
+
+	<script>
+	    //let box = document.querySelector('div.box');
+	    let p = document.querySelector('p.wode');
+		function nexta(a,b){
+			let father = a.parentNode;
+			let son = father.children;
+			let brother = p.nextSibling;
+            if(brother == null){
+                return null;
+            }
+            while(brother.nodeName != b.toUpperCase()){
+                brother = brother.nextSibling;
+                if(brother == null){
+                    return 'NO';
+                }
+            }
+			return brother;
+		}
+		console.log(nexta(p,'a'));
+	</script>
+</body>
+</html>

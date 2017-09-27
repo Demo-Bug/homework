@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<style>
+        .box{
+        	width: 300px;
+        	height: 300px;
+        	background: red;
+        	position: absolute;
+        	top: 0;
+        	left: 0;
+        }
+        *{
+            padding: 0;
+            margin: 0;    
+        }
+	</style>
+	<div class="box">
+		
+	</div>
+
+
+
+	<script>
+	    let box = document.getElementsByTagName('div')[0];
+	    let hezi = new float(box);
+		function float(obj){
+			this.obj = obj;
+			this.speed = 10;
+			this.maxX = window.innerWidth - this.obj.offsetWidth;
+		}
+        
+        float.prototype.resize = function(){
+			this.maxX = window.innerWidth - this.obj.offsetWidth;
+        }
+		float.prototype.move = function(){
+			let that = this; 
+			let t = setInterval(function(){
+				/*() => {let lefts = this.obj.offsetLeft + this.speed;
+				console.log(lefts);
+				        if(lefts >= this.maxX){
+				        	lefts == this.maxX;
+				            this.obj.style.background = 'purple';
+				        	this.speed *= -1;
+				        }
+				        if(lefts <= 0){
+				        	lefts == 0;
+				            this.obj.style.background = 'skyblue';
+				        	this.speed *= -1;
+				        }
+				        
+				        that.obj.style.left = lefts + 'px';}*/
+				let lefts = that.obj.offsetLeft + that.speed;
+				console.log(lefts);
+				        if(lefts >= that.maxX){
+				        	lefts == that.maxX;
+				            that.obj.style.background = 'purple';
+				        	that.speed *= -1;
+				        }
+				        if(lefts <= 0){
+				        	lefts == 0;
+				            that.obj.style.background = 'skyblue';
+				        	that.speed *= -1;
+				        }
+				        
+				        that.obj.style.left = lefts + 'px';
+			                    },100)
+			box.onmouseover = function(){
+				clearInterval(t);
+				this.style.background = 'blue';
+			}
+			box.onmouseout = function(){
+				this.style.background = 'skyblue';
+				hezi.move(box);
+			}
+		}
+        window.onresize = function(){
+				hezi.resize();
+			}
+	    hezi.move(box);
+	</script>
+</body>
+</html>

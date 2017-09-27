@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+    <style>
+    *{
+    	padding: 0;
+    	margin: 0;
+    }
+	    .circle{
+	    	width: 50px;
+	    	height: 50px;
+	    	border-radius: 50%;
+	    	background: red;
+	    	position: absolute;
+	    	top: 50%;
+	    	left: 50%;
+	    	transition: all ease 1000ms;
+	    }
+    </style>
+<body>
+	<script>
+	let t ;/*= setInterval(function(){
+		fn(20)
+	},1000);*/
+	function a(){
+		let b = document.getElementsByTagName('div').length;
+		t = setInterval(fn,1000);
+		if(b > 10){
+			clearInterval(t);
+		}
+		if(b < 0){
+			t = setInterval(fn,1000);
+		}
+	}
+	a();
+	function fn(num){
+		for(var i = 0 ; i < num ; i++){
+			let divs = document.createElement('div');
+			divs.className = 'circle';
+			/*位置随机*/
+			let lefts = Math.floor((innerWidth - 50)*Math.random());
+			let tops = Math.floor((innerHeight - 50)*Math.random());
+
+			let widths = Math.round(70*Math.random()+30);
+			//let heights = Math.round(50*Math.random());
+			divs.style.width = widths + 'px';
+			divs.style.height = widths + 'px';
+
+			/*divs.style.left = lefts + 'px';
+			divs.style.top = tops + 'px';*/
+			/*颜色随机*/
+			divs.style.background = color();
+			/*插入到页面中*/
+			document.body.appendChild(divs);
+
+			setTimeout(function(){
+				    divs.style.transitonDelay = `${i*500}ms`;
+					divs.style.left = lefts + 'px';
+				    divs.style.top = tops + 'px';
+				    },100);
+		}
+		function color(){
+    	    let str = 'rgb('; 
+		    for(let i = 0; i < 3; i++){
+			    let value = Math.round(Math.random()*255);
+			    str += value + ',';
+		    }
+		    str = str.slice(0,-1);
+		    str += ')';
+		    return str;
+	    }
+	}
+	</script>
+</body>
+</html>

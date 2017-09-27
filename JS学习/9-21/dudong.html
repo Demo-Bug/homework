@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+    <div>
+    	<div class="box">
+    		<div class="son"></div>
+    	
+    	hello
+    	<p>aaaaa</p>
+    	<!-- 我我我我我我我我 -->
+    	</div>
+    </div>
+
+    
+
+
+
+
+
+	<script>
+		/*document.querySelectorAll();
+		Array.prototype.call(div,function(element){
+			console.log(element);
+		})*/
+
+		//let box = document.querySelector('div.box:first-child');
+		let box = document.querySelector('div.box');
+		let child = box.childNodes;   //获取所有的节点
+
+        /*console.log(children(child));
+		function children(parent){
+			let newarr = [];
+			child.forEach(element => {
+				if(element.nodeType == 1){
+					newarr.push(element);
+				}
+			})
+			return newarr;
+		}*/
+
+
+
+		let childern = box.children;  //获取元素的节点
+		/*firstChild  //第一个子节点
+		lastChild   //最后一个子节点
+		firstElementChild   //第一个元素节点
+		lastElementChild   //最后一个元素节点
+
+		let first = firstElementChild    //第一个子元素的节点
+		first.parentNode                 //这个元素节点的父元素
+		first.nextSibling                //这个元素节点的与之相邻的下一个兄弟节点
+		first.nextElementSibling         //这个元素节点的与之相邻的下一个兄弟元素的节点
+		first.previousSibling            //这个元素节点的与之相邻的上一个兄弟节点
+		first.previousElementSibling     //这个元素节点的与之相邻的上一个兄弟元素的节点*/
+
+
+        //let arr = Array.from(child);
+        /*let newarr = [];
+        for (i = 0 ; i < arr.length ; i++){
+        	if(arr[i].nodeType == 1){
+        		newarr.push(arr[i]);
+        	}
+        }
+        console.log(newarr);*/
+        
+        var result = filite(child,function(value){
+        	return value.nodeType == 1;
+        })
+        function filite(arr,fn){
+        	let newarr = [];
+        	for(i = 0 ; i < arr.length ; i++){
+        		if(fn(arr[i])){
+        			newarr.push(arr[i]);
+        		}	
+        	}
+        	return newarr;
+        }
+        console.log(result);
+	</script>
+</body>
+</html>

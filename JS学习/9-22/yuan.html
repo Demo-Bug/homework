@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<style>
+    *{
+    	padding: 0;
+    	margin: 0;
+    }
+	.circle{
+	    	width: 1px;
+	    	height: 1px;
+	    	border-radius: 50%;
+	    	background: red;
+	    	position: absolute;
+	    	top: 50%;
+	    	left: 50%;
+	    }
+    .circles{
+    	width: 20px;
+    	height: 20px;
+    	border-radius: 50%;
+    	border: 1px solid black;
+    	position: absolute;
+    	top: 0;
+    	left: 0;
+    	transition: all 0.5s ease;
+    }
+</style>
+<body>
+	<div class="circle">
+	</div>
+	<script>
+		let divs = document.querySelector('div.circle');
+		function yuan(num,r){
+			let deg = 360 / 18;
+			for(let i = 0 ; i < num ; i ++){
+				if(i%18 == 0){
+					r += 25;
+				}
+				let ps = document.createElement('p');
+				ps.className = 'circles';
+                let rad = deg * i * Math.PI / 180 ;
+                let lefts =r*Math.cos(rad);
+                let tops =r*Math.sin(rad);
+				divs.appendChild(ps);
+				/*if(i == 11){
+					lefts =r*Math.cos(rad) + 10;
+                    tops =r*Math.sin(rad) + 30;
+				}
+				if(i == 12){
+					lefts =r*Math.cos(rad) + 10;
+                    tops =r*Math.sin(rad) + 80;
+				}
+				if(i == 13){
+					lefts =r*Math.cos(rad) + 10;
+                    tops =r*Math.sin(rad) + 130;
+				}
+				if(i == 14){
+					lefts =r*Math.cos(rad) - 20;
+                    tops =r*Math.sin(rad) + 180;
+				}*/
+				setTimeout(function(){
+				    ps.style.transitionDelay = `${i*100}ms`;
+					ps.style.left = lefts + 'px';
+				    ps.style.top = tops + 'px';
+				    ps.style.background = color();
+				    },5)
+			}
+			function color(){
+	    	    let str = 'rgb('; 
+			    for(let i = 0; i < 3; i++){
+				    let value = Math.round(Math.random()*255);
+				    str += value + ',';
+			    }
+			    str = str.slice(0,-1);
+			    str += ')';
+			    return str;
+	        }
+		}	
+		yuan(90,200);
+	</script>
+</body>
+</html>

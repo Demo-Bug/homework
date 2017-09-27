@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<style>
+	.box{
+		width: 300px;
+		height: 300px;
+		border: 1px solid black;
+	}
+</style>
+<body>
+	<div class="box">
+	    <div>
+	    	<p></p>
+	    </div>
+		<p class="po">p</p>
+		<h1></h1>
+		<span></span>
+	</div>
+
+	<script>
+		let box = document.querySelector('div.box');
+		let p = document.querySelector('p.po');
+		let span = document.querySelector('span');
+		let divs = document.createElement('div');
+		divs.style.cssText = `
+            width : 100px ;
+            height : 100px ;
+		    background : red;`
+		//box.appendChild(divs);
+		/*插入div在p的前面*/
+		//box.insertBefore(divs,p)
+		
+
+		/*insertAfter(element,position)  把element插入到position后面*/
+		/*function insertAfter(element,position){
+			let next = this.nextElementSibling;
+			let parent = this.parentNode;
+			if(next){
+				parent.insertBefore(element,next);
+			}else{
+				parent.appendChild(element);
+			}
+		}*/
+		//insertAfter(divs,span);
+	    
+        /*把一个元素插入到某一个元素的后面*/
+	    /*HTMLElement.prototype.insertAfter = function(element){
+	    	let next = this.nextElementSibling;
+			let parent = this.parentNode;
+			if(next){
+				parent.insertBefore(element,next);
+			}else{
+				parent.appendChild(element);
+			}
+	    }
+	    p.insertAfter(divs);*/
+
+        /*把一个元素插入到另外一个里面的第一个元素的前面去*/
+	   /* HTMLElement.prototype.prependChild = function(element){
+	    	let first = this.firstElementChild;
+			if(first){
+				this.insertBefore(element,first);
+			}else{
+				this.appendChild(element);
+			}
+	    }
+	    p.prependChild(divs);*/
+                  /*||这个和上面这个是等价的||*/
+        /*把一个元素插入到另外一个里面的第一个元素的前面去*/
+	    /*HTMLElement.prototype.prependTo = function(element){
+	    	let first = element.firstElementChild;
+			// let parent = this.parentNode;
+			if(first){
+				first.insertBefore(this,first);
+			}else{
+				element.appendChild(this);
+			}
+	    }
+	    divs.prependTo(p);*/
+
+
+	     /*把一个元素插入到某一个元素的后面*/
+	   /* HTMLElement.prototype.insertAfter = function(element){
+	    	let next = element.nextElementSibling;
+			let parent = element.parentNode;
+			if(next){
+				parent.insertBefore(this,next);
+			}else{
+				parent.appendChild(this);
+			}
+	    }
+	    divs.insertAfter(p);*/
+
+	    /*移除*/
+	    // box.removeChild(p)    把box里面的p移除、并不是删除，还是存在于内存中的。
+	    // p = null   这个是删除
+	    
+
+	    // box.replaceChild(a,b)    替换，在box里面用a替换掉b
+	    
+
+	    // 复制
+	    /*let copy = p.cloneNode();   复制，这样的复制仅仅是复制这个盒子不复制内容，如果（里面写个true就全部复制包括内容。） 
+	    document.body.appendChild(copy); 把复制的这个放到大盒子的最后（随便放）*/
+	    /*empty*/
+	</script>
+</body>
+</html>

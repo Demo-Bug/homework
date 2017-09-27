@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div class="box">
+		<ul>
+			<li class="li第一个">1
+				<ul>
+					<li class="li第二个">2
+						<ul>
+							<li class="li第三个">
+								3
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+
+
+    <script>
+    	let li3 = document.querySelector('div.box');
+    	function ba(a,b){
+    		if(a.nodeName == 'BODY' || a.nodeName == 'HTML'){
+                return 'NO';
+            }
+	    	let father = a.parentNode;
+	    	if(father.nodeName == 'BODY'){
+                return 'NO';
+            }
+	    	while(father.nodeName != b.toUpperCase()){
+	    		father = father.parentNode;
+	    		if(father == null){
+	    			return 'NO';
+	    		}
+	    	}
+	    	return father;
+    	}
+    	console.log(ba(li3,'h1'));
+    </script>
+</body>
+</html>

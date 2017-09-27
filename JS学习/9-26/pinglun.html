@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<style>
+	.quyu{
+		width: 800px;
+		height: 1000px;
+		background: #808080;
+		margin: 50px auto;
+	}
+	*{
+		list-style: none;
+		padding: 0;
+		margin: 0;
+	}
+	.topbox{
+		width: 100%;
+		height: 200px;
+		background: pink;
+		position: relative;
+	}
+	.write{
+		width: 250px;
+		height: 150px;
+		margin-left: 200px;
+	}
+	textarea{
+		width: 220px;
+		height: 100px;
+		resize: none;
+		font-size: 30px;
+	}
+	input{
+		margin-bottom: 10px;
+	}
+	.tixing{
+		position: absolute;
+		top: 130px;
+		left: 160px;
+		margin-left: 200px;
+	}
+	.submit{
+		width: 60px;
+		height: 20px;
+		background: purple;
+		position: absolute;
+		top: 150px;
+		left: 150px;
+		text-align: center;
+		color: skyblue;
+		margin-left: 200px;
+	}
+	.bottombox{
+		width: 100%;
+		height: 500px;
+		background: red;
+	}
+	.bottombox li img{
+		display: block;
+		width: 40px;
+		height: 40px;
+		position: absolute;
+	}
+	.bottombox li .neirong{
+		position: relative;
+		/* background: blue; */
+		min-height: 90px;
+		margin-left: 50px;
+	}
+</style>
+<body>
+	<div class="quyu">
+		<div class="topbox">
+			<div class="write">
+				<input type="text" placeholder="请输入名字">
+				<textarea name="" id="" cols="30" rows="10" placeholder="您想说点什么"></textarea>
+				<div class="tixing"><span class="yijing">0</span>/<span class="haiyou">100</span></div>
+			</div>
+			<div class="submit">提交</div>
+		</div>
+		<ul class="bottombox">
+			<li>
+				<img src="../家具商城/img/LOGO.png" alt="">
+				<div class="neirong">
+					<span></span>
+					<p></p>
+				</div>
+			</li>
+		</ul>
+	</div>
+
+	<script>
+		let text = document.querySelector('textarea');
+		let yijing = document.querySelector('.yijing');
+		let haiyou = document.querySelector('.haiyou');
+		text.onkeyup = function(){
+			let value = this.value;
+			yijing.innerHTML = value.length;
+			haiyou.innerHTML = 100 - value.length;
+		}
+
+		let tijiao = document.querySelector('.submit');
+		let tixing = document.querySelector('.tixing');
+		tijiao.addEventListener('click',fn);
+		function fn(){
+			let yijing = 0;
+	 		let value = document.getElementsByTagName('textarea')[0].value;
+	 		let bottombox = document.querySelector('.bottombox');
+	 		let input = document.querySelector('input').value;
+			let neirong = document.querySelector('.neirong');
+			let name = neirong.querySelector('span');
+			let p = neirong.querySelector('p');
+			let li = document.createElement('li');
+			li.className = 'li';
+			li.innerHTML =
+			 		`<img src="../家具商城/img/LOGO.png" alt="">
+					<div class="neirong">
+						<span>${input} </span>
+						<p>${value} </p> 
+					</div>`
+			bottombox.appendChild(li);
+	        document.getElementsByTagName('input')[0].value='';
+	        document.getElementsByTagName('textarea')[0].value='';
+	        bottombox.addEventListener('mouseover',fn1);
+	        bottombox.addEventListener('mouseout',fn2);
+	        function fn1(e){
+	        	let element = e.target;
+	        	if(element.nodeName == 'LI'){
+	        		element.style.background = 'purple';
+	        	}
+	        }
+	        function fn2(e){
+	        	let element = e.target;
+	        	if(element.nodeName == 'LI'){
+	        		element.style.background = 'none';
+	        	}
+	        }
+		}
+	</script>
+</body>
+</html>

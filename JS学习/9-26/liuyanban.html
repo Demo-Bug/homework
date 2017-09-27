@@ -1,0 +1,35 @@
+<!DOCTYPE>
+<html lang="zh-en">
+<head>
+	<title>js实现简单留言板</title>
+	<meta http-equiv="content-type" content="text/html;charset=utf-8">
+	<link rel="stylesheet" type="text/css" href="liuyanban.css">
+	<script type="text/javascript" src="liuyanban.js"></script>
+</head>
+<body>
+	<div class="container">
+		<div class="content">
+		<!-- <form action="?" method="?"> -->
+			<div class="text">
+				<label for="message">js简单留言板(置空可以查看默认的留言内容)</label>
+			</div>
+			<div class="text" style="margin-left:-75px">
+				<label for="name">昵称：</label>
+				<input type="text" id="name" value="昵称(默认是赵路)" class="txt">
+			</div>
+			<div class="text">
+				<textarea rows="5" cols="30" id="message" value="" class="txt">给我留言(默认留言内容：我的小站：www.wuif1707.com)</textarea>
+			</div>
+			<div class="btn">
+				<div class="tixing"><span class="yijing">0</span>/<span class="haiyou">100</span></div>
+				<!-- <input type="submit" id="submit" value="提交留言"> -->
+				<button id="btn1">提交留言</button>
+			</div>
+			<!-- </form> -->
+		</div>
+		<h3 style="clear:right">留言列表</h3>
+		<hr/>
+		<div class="messageList" id="messageList"></div>
+	</div>
+</body>
+</html>

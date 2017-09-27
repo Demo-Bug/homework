@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<style>
+	.box{
+		width: 300px;
+		height: 300px;
+		background: red;
+		position: absolute;
+		left: 0;
+		top: 0;
+	}
+    h1{
+    	font-size: 50px;
+    	content: white;
+    	text-align: center;
+    	line-height: 280px;
+    }
+	*{
+		padding: 0;
+		margin: 0;
+	}
+</style>
+<body>
+	<div class="box">
+		<h1>你</h1>
+	</div>
+
+	<script>
+		let box = document.getElementsByClassName('box')[0];
+		let box1 = document.getElementsByClassName('box1')[0];
+		let zi = document.getElementsByTagName('h1')[0];
+		/*console.log(box);
+		console.log(getComputedStyle(box,null).width);   // 300px
+ 		console.log(box.offsetWidth);                    // 320
+ 		console.log(box.offsetLeft);                     // 8
+ 		console.log(box1.offsetLeft);*/                   // 0
+ 		/*offsetHeight 获取宽 offsetWidth获取高 offsetLeft 获取左距离 offsetRight获取右距离*/
+
+        
+        let t = setInterval(move,100);
+        let value = 20;
+        let value1 = 20;
+        let top1 = box.offsetTop;
+        let left1 = box.offsetLeft;
+        let maxg = window.innerHeight - box.offsetHeight;
+        let maxk = window.innerWidth - box.offsetWidth;
+        function move(){
+        	top1 = top1 + value; 
+        	left1 = left1 + value1; 
+        	if(top1 >= maxg){
+        		value*= -1;	
+        	    box.style.background = 'pink';
+        	    zi.innerText = '好';
+        	}
+        	if(top1 <= 0){
+        		value*= -1;	
+        	    box.style.background = 'skyblue';
+        	    zi.innerText = '你';
+        	}
+        	if(left1 >= maxk){
+        		value1*= -1;
+        	    box.style.background = 'green';
+        	    zi.innerText = '好';
+        	}
+        	if(left1 <= 0){
+        		value1*= -1;
+        	    box.style.background = 'purple';
+        	    zi.innerText = '好';
+        	}
+        	box.style.top = top1 + 'px';
+        	box.style.left = left1 + 'px';
+        }
+	</script>
+</body>
+</html>

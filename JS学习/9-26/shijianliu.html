@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<style>
+	.box{
+		width: 600px;
+		height: 650px;
+		background: red;
+	}
+	.son{
+		width: 200px;
+		height: 200px;
+		float: left;
+		background: pink;
+	}
+</style>
+<body>
+	<div class="box">
+		<div class="son"></div>
+		<div class="son"></div>
+		<div class="son"></div>
+		<div class="son"></div>
+		<div class="son"></div>
+		<div class="son"></div>
+	</div>
+	<script>
+		let box = document.querySelector('.box');
+		let son = document.querySelector('.son');
+		box.onclick = function(e){
+			console.log(e.currentTarget);
+			e.target.style.background = 'purple';
+		}
+	</script>
+</body>
+</html>

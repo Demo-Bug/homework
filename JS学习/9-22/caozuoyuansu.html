@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<style>
+	.box{
+		width: 600px;
+		height: 600px;
+		border: 1px solid black;
+	}
+	.p{
+		width: 100px;
+		height: 100px;
+		background: pink;
+	}
+</style>
+<body>
+    <div class="box"></div>
+	<script>
+	    let box = document.querySelector('div.box'); 
+	    /*创建一个div盒子*/
+		let div1 = document.createElement('div');
+		div1.style.width = '300px';
+		div1.style.height = '300px';
+		div1.style.background = 'red';
+
+		/*把这个创建好的盒子插入到box里面*/
+		box.appendChild(div1);
+        /*创建一个p*/
+        let p1 = document.createElement('p');
+		/*把这个创建好的p插入到box里面*/
+		box.appendChild(p1);
+		/*把这个创建好的p命名className*/
+        p1.className = 'p';
+        /*这里可以设置样式，但是用cssText胡覆盖掉原来的*/
+        p1.style.cssText =` 
+            width:150px;
+            height:150px;
+            background:green;`
+        ;
+	</script>
+</body>
+</html>

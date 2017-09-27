@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+    <div class="box">
+    	<ul class="a">
+    		<li></li>
+    		<li></li>
+    		<li></li>
+    	</ul>
+    	<div>我</div>
+    	<span>嗯？</span>
+    	<p class="wode">d</p>
+    	<div>爱</div>
+    	<h1>我欧文欧文</h1>
+    	<div>爱爱爱</div>
+    	<!-- <p></p> -->
+    	<span>
+    		
+    	</span>
+    	<div>你</div>
+    </div>
+
+    <div class="box1">
+    	<p>aaa</p>
+    	<ul class="a">
+    		<li></li>
+    		<li></li>
+    		<li></li>
+    	</ul>
+    	<div>我</div>
+    	<span>嗯？</span>
+    	<p>d</p>
+    	<div>我</div>
+    	<span>嗯？</span>
+    	<p>d</p>
+    	<div>爱</div>
+    	<h1>我欧文欧文</h1>
+    	<div></div>
+    	<div>爱</div>
+    	<h1>我欧文欧文</h1>
+    	<div></div>
+    	<p></p>
+    	<span>
+    		
+    	</span>
+    	<div>你</div>
+    </div>
+    
+    <div class="box2">
+    	<p>aaa</p>
+    	<ul class="a">
+    		<li></li>
+    		<li></li>
+    		<li></li>
+    	</ul>
+    	<div>我</div>
+    	<span>嗯？</span>
+    	<p>d</p>
+    	<div>爱</div>
+    	<h1>我欧文欧文</h1>
+    	<div></div>
+    	<p></p>
+    	<div>我</div>
+    	<span>嗯？</span>
+    	<p>d</p>
+    	<div>爱</div>
+    	<h1>我欧文欧文</h1>
+    	<div></div>
+    	<span>
+    		
+    	</span>
+    	<div>你</div>
+    </div>
+	<script>
+	    //let box = document.querySelector('div.box');
+	    let p = document.querySelector('p,wode');
+		function nexta(a,b){
+			let father = a.parentNode;
+			let son = father.children;
+			let index = 0;
+			for(let i = 0 ; i < son.length ; i++){
+				if(son[i] == a){
+					index = i;
+					break;
+				}
+			}
+			let nextAll = Array.from(son).slice(index+1);
+			console.log(nextAll)
+			for(let i = 0 ; i < nextAll.length ; i++){
+				if(nextAll[i].nodeName == b.toUpperCase()){
+					return nextAll[i];
+				}
+			}
+			return 'NO';
+		}
+		console.log(nexta(p,'div'));
+	</script>
+</body>
+</html>
